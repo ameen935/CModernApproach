@@ -16,31 +16,23 @@
  * Hint: The element in row i, column j, should be the letter B if i + j is an
  * even number.
  */
-#include <stdio.h>
 
+#include <stdio.h>
+#include <stdlib.h>
 #define ROWS 8
 #define COLS 8
 
 int main(void)
 {
-	char checker_board[ROWS][COLS];
-
-	for (int i = 0; i < ROWS; i++) {
-		for (int j = 0; j < COLS; j++) {
-			if ((i + j) % 2 == 0) {
-				checker_board[i][j] = 'B';
-			} else {
-				checker_board[i][j] = 'R';
-			}
-		}
-	}
-
-	for (int i = 0; i < ROWS; i++) {
-		for (int j = 0; j < COLS; j++) {
-			printf("%c ", checker_board[i][j]);
-		}
-		printf("\n");
-	}
-
-	return 0;
+    int i, j;
+    char checker_board[8][8]={'0'};
+    for (i=0;i<ROWS;i++)
+    {
+        for (j=0;j<COLS;j++)
+        {
+            printf("%c", (i+j)%2==0 ? 'B' : 'R');
+        }
+        printf("\n");
+    }
+    return 0;
 }
